@@ -1,8 +1,8 @@
 const WebSocket = require('ws');
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const wss = new WebSocket.Server({ port: PORT });
 
-console.log(`WebSocket server starting on ws://localhost:${PORT}`);
+console.log(`✅ WebSocket server running on ws://localhost:${PORT}`);
 
 const board = new Array(25).fill(0);
 let players = { ODD: null, EVEN: null };
